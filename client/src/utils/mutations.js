@@ -30,6 +30,7 @@ export const SAVE_BOOK = gql`
     $bookId: String
     $authors: [String]
     $description: String
+    $title: String
     $image: String
     $link: String
     ) {
@@ -37,6 +38,7 @@ export const SAVE_BOOK = gql`
       bookId: $bookId
       authors: $authors
       description: $description
+      title: $title
       image: $image
       link: $link
     ) {
@@ -46,9 +48,9 @@ export const SAVE_BOOK = gql`
       bookCount
       savedBooks {
         bookId
-        title
         authors
         description
+        title
         image
         link
       }
