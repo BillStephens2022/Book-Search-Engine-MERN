@@ -8,7 +8,6 @@ const typeDefs = gql`
     bookCount: Int
     savedBooks: [Book]
   }
-
   type Book {
     bookId: String
     title: String
@@ -21,11 +20,9 @@ const typeDefs = gql`
     token: ID
     user: User
   }
-
   type Query {
     me: User
   }
-
   type Mutation {
     addUser(username: String, email: String, password: String): Auth
     login(email: String, password: String): Auth

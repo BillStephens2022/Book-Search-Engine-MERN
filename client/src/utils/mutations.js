@@ -67,9 +67,9 @@ export const REMOVE_BOOK = gql`
       bookCount
       savedBooks {
         bookId
-        title
         authors
         description
+        title
         image
         link
       }

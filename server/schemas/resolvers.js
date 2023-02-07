@@ -52,13 +52,13 @@ const resolvers = {
                 { new: true, runValidators: true }
             );
         } else {
-          throw new AuthenticationError("You need to be logged in! *********");
+          throw new AuthenticationError("You need to be logged in!");
         }
     },
     // removeBook
     removeBook: async (parent, { bookId }, context ) => {
         if (context.user) {
-            return User.findOneAndUpdate(
+            return await User.findOneAndUpdate(
                 { _id: context.user._id },
                 { $pull: { savedBooks: { bookId } } },
                 { new: true, runValidators: true }
