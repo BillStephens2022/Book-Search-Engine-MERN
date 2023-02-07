@@ -72,7 +72,7 @@ const SearchBooks = () => {
       console.log('searchBooks bookToSave: ' + bookToSave);
       const response = await saveBook({ variables: bookToSave, token });
       
-      if (!response.ok) {
+      if (!response) {
         throw new Error('something went wrong!');
       }
 
