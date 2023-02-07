@@ -21,7 +21,6 @@ const resolvers = {
     },
     // login
     login: async (parent, { email, password }, context) => {
-      console.log('context-login: ' + context.user);
       const user = await User.findOne({ email });
 
       if (!user) {
@@ -40,7 +39,6 @@ const resolvers = {
     },
     // saveBook
     saveBook: async (parent, { bookId, authors, description, title, image, link }, context) => {
-        console.log("title: " + title);
         if (context.user) {
             return await User.findOneAndUpdate(
                 { _id: context.user._id },
